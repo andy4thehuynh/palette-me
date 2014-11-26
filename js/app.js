@@ -1,59 +1,145 @@
-SearchView = Backbone.View.extend({
-  initialize: function() {
+ // VIEW
+SkinView = Backbone.View.extend({
+  initialize: function(config) {
+    this.palette = config.palette;
     this.render();
   },
+  // TODO: cache the template as a property later
   render: function() {
-    var template = _.template( $('#search-template').html(), {} );
-    this.$el.html( template );
+    var html = _.template($('#skin-template').html());
+    this.$el.html( html );
   },
   events: {
-    "click input[type=button]": "doSearch"
+    "change input[type=radio]": "getSkinColor"
   },
-  doSearch: function(e) {
-    alert( "Search for " + $('#search-input').val());
+  getSkinColor: function(e) {
+    var selectedSkinColor = $('input[name=skin-type]:checked').val();
+    this.palette.set("skinColor", selectedSkinColor);
   } 
 });
 
-searchview = new SearchView({ el: $('#search-container') });
 
-console.log("This is the searchview below: ");
-console.log(searchview);
-
-
-
-Person = Backbone.Model.extend({
-  defaults: {
-    name: "Stephanie",
-    age: 25
+HairView = Backbone.View.extend({
+  initialize: function(config) {
+    this.palette = config.palette;
+    this.render();
   },
+  render: function() {
+    var html = _.template( $('#hair-template').html(), {} );
+    this.$el.html( html );
+  },
+  events: {
+    "change input[type=radio]": "getHairColor"
+  },
+  getHairColor: function(e) {
+    var selectedHairColor = $('input[name=hair-type]:checked').val();
+    this.palette.set("hairColor", selectedHairColor);
+  }
+});
 
+
+EyesView = Backbone.View.extend({
+  initialize: function(config) {
+    this.palette = config.palette;
+    this.render();
+  },
+  render: function() {
+    var html = _.template( $('#eyes-template').html(), {} );
+    this.$el.html( html );
+  },
+  events: {
+    "change input[type=radio]": "getEyesColor"
+  },
+  getEyesColor: function(e) {
+    console.log(this.palette);
+    var selectedEyesColor = $('input[name=eyes-type]:checked').val();
+    this.palette.set("eyeColor", selectedEyesColor);
+  }
+});
+
+
+
+PaletteView = Backbone.View.extend({
+  initialize: function(config) {
+    this.palette = config.palette;
+    this.render();
+    this.listenTo(this.palette, "change", this.render);
+    this.listenTo(this.palette, "change", this.suggestedPalettes);
+  },
+  template: _.template($('#palette-template').html()),
+  suggestedPalettes: function() {
+    if (this.palette.suggestions()) {
+      $('.details').removeClass('active');
+      $('#' + this.palette.suggestions() + "-details").addClass('active');
+      console.log("WOULD RENDER SUGGESTIONS");
+    }
+  },
+  render: function() {
+    var html = this.template(this.palette.toJSON());
+    this.$el.html( html );
+  },
+});
+
+
+
+// MODEL
+Palette = Backbone.Model.extend({
+  defaults: {
+    // "clear-winter": { "medium-grey": "#d3d3d3" },
+    // "cool-winter": { "icy-grey": "#d1d9d2" },
+    // "deep-winter": { "black": "#000000" },
+    // "clear-spring": { "navy": "#000080" },
+    // "warm-spring": { "camel": "#c19a6b" },
+    // "light-spring": { "camel": "#c19a6b" },
+    // "light-summer": { "light-grey": "#d3d3d3" },
+    // "cool-summer": { "light-grey": "#d3d3d3" },
+    // "soft-summer": { "black": "#000" },
+    // "soft-autumn": { "mahogany": "#C04000" },
+    // "warm-autumn": { "camel": "#c19a6b" },
+    // "deep-autumn": { "pewter": "#8e9294" }
+  },
   initialize: function() {
-    alert("Hits initialize()");
-    this.on("change:name", function(model) {
-      var name = model.get("name");
-      alert("My name changed to " + name);
-    });
+    // this.on("change:skin", function(model) {
+    //   var skin = model.get("skin");
+    //   alert("My skin changed to " + skin);
+    // });
+  },
+  suggestions: function() {
+    if (this.get("eyeColor") && this.get("skinColor") && this.get("hairColor")) {
+      return "deep-winter";
+    } 
   }
 });
+var palette = new Palette({ skinColor: undefined, hairColor: undefined, eyeColor: undefined });
 
-var person = new Person({ name: "Andy", age: 23 });
-person.set({ name: "James Peng" });
+skinView = new SkinView({ el: $('#skin-container'), palette: palette });
+hairView = new HairView({ el: $('#hair-container'), palette: palette });
+eyesView = new EyesView({ el: $('#eyes-container'), palette: palette });
 
-var AppRouter = Backbone.Router.extend({
-  routes: {
-    "post/:id": "getPost",
-    "*actions": "defaultRoute"
-  }
-});
+paletteView = new PaletteView({ el: $('#palette-container'), palette: palette });
 
-var appRouter = new AppRouter;
 
-appRouter.on('route:getPost', function(id) {
-  alert("got post: " + id);
-});
 
-appRouter.on('route:defaultRoute', function(actions) {
-  alert(actions);
-});
 
-Backbone.history.start();
+
+
+
+
+// ROUTER
+// var AppRouter = Backbone.Router.extend({
+//   routes: {
+//     "skin": "getSkin",
+//     "*actions": "defaultRoute"
+//   }
+// });
+// 
+// var appRouter = new AppRouter;
+// 
+// appRouter.on('route:getSkin', function(id) {
+//   alert("Got skin: " + skin);
+// });
+// 
+// appRouter.on('route:defaultRoute', function(actions) {
+//   // alert(actions);
+// });
+// Backbone.history.start();

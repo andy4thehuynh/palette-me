@@ -4,13 +4,152 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div id="search-container"></div>
+  <div id="skin-container"></div>
+  <div id="hair-container"></div>
+  <div id="eyes-container"></div>
 
-  <script type="text/template" id="search-template">
-    <label>Search</label>
-    <input type="text" id="search-input" />
-    <input type="button" id="search-button" value="Search" />
+  <div id="palette-container"></div>
+
+  <script type="text/template" id="skin-template">
+    <label>Select your Skin color:</label>
+
+    <label for="porcelain">
+      <input type="radio" name="skin-type" value="porcelain" />
+      porcelain
+    </label>
+    <label for="ivory">
+      <input type="radio" name="skin-type" value="ivory" />
+      ivory
+    </label>
+    <label for="pink-beige">
+      <input type="radio" name="skin-type" value="pink-beige" />
+      pink beige
+    </label>
+    <label for="neutral-beige">
+      <input type="radio" name="skin-type" value="neutral-beige" />
+      neutral beige
+    </label>
+    <label for="warm-beige">
+      <input type="radio" name="skin-type" value="warm-beige" />
+      warm beige
+    </label>
+    <label for="golden-brown">
+      <input type="radio" name="skin-type" value="golden-brown" />
+      golden brown
+    </label>
+    <label for="cool-brown">
+      <input type="radio" name="skin-type" value="cool-brown" />
+      cool brown
+    </label>
+    <label for="olive">
+      <input type="radio" name="skin-type" value="olive" />
+      olive
+    </label>
   </script>
+
+  <script type="text/template" id="hair-template">
+    <label>Select your Hair color:</label>
+      <label for="ash-blonde">
+        <input type="radio" name="hair-type" value="ash-blonde" />
+        ash blonde
+      </label>
+
+      <label for="strawberry">
+        <input type="radio" name="hair-type" value="strawberry" />
+        strawberry
+      </label>
+
+      <label for="light-brown">
+        <input type="radio" name="hair-type" value="light-brown" />
+        light brown
+      </label>
+
+      <label for="mousey-brown">
+        <input type="radio" name="hair-type" value="mousey-brown" />
+        mousey brown
+      </label>
+
+      <label for="medium-brown">
+        <input type="radio" name="hair-type" value="medium-brown" />
+        medium brown
+      </label>
+
+      <label for="dark-brown">
+        <input type="radio" name="hair-type" value="dark-brown" />
+        dark brown
+      </label>
+
+      <label for="black">
+        <input type="radio" name="hair-type" value="black" />
+        black
+      </label>
+
+      <label for="warm-grey">
+        <input type="radio" name="hair-type" value="warm-grey" />
+        warm grey
+      </label>
+
+      <label for="silver">
+        <input type="radio" name="hair-type" value="silver" />
+        silver
+      </label>
+
+      <label for="auburn">
+        <input type="radio" name="hair-type" value="auburn" />
+        auburn
+      </label>
+
+      <label for="ash-grey">
+        <input type="radio" name="hair-type" value="ash-grey" />
+        ash grey
+      </label>
+  </script>
+
+  <script type="text/template" id="eyes-template">
+    <label>Select your Eye color: </label>
+
+    <label for="hazel">
+      <input type="radio" name="eyes-type" value="hazel" />
+      hazel
+    </label>
+
+    <label for="blue-green">
+      <input type="radio" name="eyes-type" value="blue-green" />
+      blue green
+    </label>
+
+    <label for="grey">
+      <input type="radio" name="eyes-type" value="grey" />
+      grey
+    </label>
+
+    <label for="golden-brown">
+      <input type="radio" name="eyes-type" value="golden-grown" />
+      golden brown
+    </label>
+
+    <label for="turquoise">
+      <input type="radio" name="eyes-type" value="turquoise" />
+      turquoise
+    </label>
+  </script>
+
+  <script type="text/template" id="palette-template">
+    <h1><%= skinColor %></h1>
+    <h1><%= hairColor %></h1>
+    <h1><%= eyeColor %></h1>
+    <div id="clear-winter-details" class="details">
+      CLEAR WINTER
+    </div>
+    <div id="deep-winter-details" class="details">
+      DEEP WINTER
+    </div>
+    <div id="autumn-winter-details" class="details">
+      AUTUMN WINTER
+    </div>
+  </script>
+
+
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="js/underscore-min.js"></script>
   <script type="text/javascript" src="js/backbone-min.js"></script>

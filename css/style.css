@@ -1,0 +1,8 @@
+.details {
+  background: white;
+}
+
+.details.active {
+  color: white;
+  background: red;
+}
