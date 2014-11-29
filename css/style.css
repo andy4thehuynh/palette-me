@@ -1,3 +1,7 @@
+.container-fluid {
+  max-width: 768px;
+}
+
 .details {
   background: white;
 }

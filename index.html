@@ -1,136 +1,134 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>SHE Palette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
-  <div id="skin-container"></div>
-  <div id="hair-container"></div>
-  <div id="eyes-container"></div>
+  <div class="container-fluid">
+    <div id="skin-container"></div>
+    <div id="hair-container"></div>
+    <div id="eyes-container"></div>
+  </div>
 
-  <div id="palette-container"></div>
+  <div class="container-fluid">
+    <div id="palette-container"></div>
+  </div>
 
   <script type="text/template" id="skin-template">
     <label>Select your Skin color:</label>
 
     <label for="porcelain">
       <input type="radio" name="skin-type" value="porcelain" />
-      porcelain
+      Porcelain
     </label>
     <label for="ivory">
       <input type="radio" name="skin-type" value="ivory" />
-      ivory
+      Ivory
     </label>
     <label for="pink-beige">
       <input type="radio" name="skin-type" value="pink-beige" />
-      pink beige
+      Pink Beige
     </label>
     <label for="neutral-beige">
       <input type="radio" name="skin-type" value="neutral-beige" />
-      neutral beige
+      Neutral Beige
     </label>
     <label for="warm-beige">
       <input type="radio" name="skin-type" value="warm-beige" />
-      warm beige
+      Warm Beige
     </label>
     <label for="golden-brown">
       <input type="radio" name="skin-type" value="golden-brown" />
-      golden brown
+      Golden Brown
     </label>
     <label for="cool-brown">
       <input type="radio" name="skin-type" value="cool-brown" />
-      cool brown
+      Cool Brown
     </label>
     <label for="olive">
       <input type="radio" name="skin-type" value="olive" />
-      olive
+      Olive
     </label>
   </script>
 
   <script type="text/template" id="hair-template">
     <label>Select your Hair color:</label>
+
       <label for="ash-blonde">
         <input type="radio" name="hair-type" value="ash-blonde" />
-        ash blonde
+        Ash Blonde
       </label>
-
       <label for="strawberry">
         <input type="radio" name="hair-type" value="strawberry" />
-        strawberry
+        Strawberry
       </label>
-
       <label for="light-brown">
         <input type="radio" name="hair-type" value="light-brown" />
-        light brown
+        Light Brown
       </label>
-
       <label for="mousey-brown">
         <input type="radio" name="hair-type" value="mousey-brown" />
-        mousey brown
+        Mousey Brown
       </label>
-
       <label for="medium-brown">
         <input type="radio" name="hair-type" value="medium-brown" />
-        medium brown
+        Medium Brown
       </label>
-
       <label for="dark-brown">
         <input type="radio" name="hair-type" value="dark-brown" />
-        dark brown
+        Dark Brown
       </label>
-
       <label for="black">
         <input type="radio" name="hair-type" value="black" />
-        black
+        Black
       </label>
-
       <label for="warm-grey">
         <input type="radio" name="hair-type" value="warm-grey" />
-        warm grey
+        Warm Grey
       </label>
-
       <label for="silver">
         <input type="radio" name="hair-type" value="silver" />
-        silver
+        Silver
       </label>
-
       <label for="auburn">
         <input type="radio" name="hair-type" value="auburn" />
-        auburn
+        Auburn
       </label>
-
       <label for="ash-grey">
         <input type="radio" name="hair-type" value="ash-grey" />
-        ash grey
+        Ash Grey
       </label>
   </script>
 
   <script type="text/template" id="eyes-template">
     <label>Select your Eye color: </label>
 
-    <label for="hazel">
-      <input type="radio" name="eyes-type" value="hazel" />
-      hazel
+    <label for="rich-hazel">
+      <input type="radio" name="eyes-type" value="rich-hazel" />
+      Rich Hazel or Dark Brown
     </label>
 
     <label for="blue-green">
       <input type="radio" name="eyes-type" value="blue-green" />
-      blue green
+      Blue Green or Bright Hazel
     </label>
 
     <label for="grey">
       <input type="radio" name="eyes-type" value="grey" />
-      grey
+      Grey or Soft Blue
     </label>
 
-    <label for="golden-brown">
-      <input type="radio" name="eyes-type" value="golden-grown" />
-      golden brown
+    <label for="topaz">
+      <input type="radio" name="eyes-type" value="topaz" />
+      Topaz or Turquoise
     </label>
 
-    <label for="turquoise">
-      <input type="radio" name="eyes-type" value="turquoise" />
-      turquoise
+    <label for="soft-hazel">
+      <input type="radio" name="eyes-type" value="soft-hazel" />
+      Soft Hazel or Turquoise
     </label>
   </script>
 
@@ -148,7 +146,6 @@
       AUTUMN WINTER
     </div>
   </script>
-
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="js/underscore-min.js"></script>

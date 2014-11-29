@@ -71,7 +71,6 @@ PaletteView = Backbone.View.extend({
     if (this.palette.suggestions()) {
       $('.details').removeClass('active');
       $('#' + this.palette.suggestions() + "-details").addClass('active');
-      console.log("WOULD RENDER SUGGESTIONS");
     }
   },
   render: function() {
@@ -99,10 +98,6 @@ Palette = Backbone.Model.extend({
     // "deep-autumn": { "pewter": "#8e9294" }
   },
   initialize: function() {
-    // this.on("change:skin", function(model) {
-    //   var skin = model.get("skin");
-    //   alert("My skin changed to " + skin);
-    // });
   },
   suggestions: function() {
     if (this.get("eyeColor") && this.get("skinColor") && this.get("hairColor")) {
@@ -110,6 +105,7 @@ Palette = Backbone.Model.extend({
     } 
   }
 });
+
 var palette = new Palette({ skinColor: undefined, hairColor: undefined, eyeColor: undefined });
 
 skinView = new SkinView({ el: $('#skin-container'), palette: palette });
@@ -117,29 +113,3 @@ hairView = new HairView({ el: $('#hair-container'), palette: palette });
 eyesView = new EyesView({ el: $('#eyes-container'), palette: palette });
 
 paletteView = new PaletteView({ el: $('#palette-container'), palette: palette });
-
-
-
-
-
-
-
-
-// ROUTER
-// var AppRouter = Backbone.Router.extend({
-//   routes: {
-//     "skin": "getSkin",
-//     "*actions": "defaultRoute"
-//   }
-// });
-// 
-// var appRouter = new AppRouter;
-// 
-// appRouter.on('route:getSkin', function(id) {
-//   alert("Got skin: " + skin);
-// });
-// 
-// appRouter.on('route:defaultRoute', function(actions) {
-//   // alert(actions);
-// });
-// Backbone.history.start();
