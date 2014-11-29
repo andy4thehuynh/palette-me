@@ -4,9 +4,9 @@ SkinView = Backbone.View.extend({
     this.palette = config.palette;
     this.render();
   },
-  // TODO: cache the template as a property later
+  template: _.template($('#skin-template').html()),
   render: function() {
-    var html = _.template($('#skin-template').html());
+    var html = this.template;
     this.$el.html( html );
   },
   events: {
@@ -24,8 +24,9 @@ HairView = Backbone.View.extend({
     this.palette = config.palette;
     this.render();
   },
+  template: _.template($('#hair-template').html()),
   render: function() {
-    var html = _.template( $('#hair-template').html(), {} );
+    var html = this.template;
     this.$el.html( html );
   },
   events: {
@@ -43,8 +44,9 @@ EyesView = Backbone.View.extend({
     this.palette = config.palette;
     this.render();
   },
+  template: _.template($('#eyes-template').html()),
   render: function() {
-    var html = _.template( $('#eyes-template').html(), {} );
+    var html = this.template;
     this.$el.html( html );
   },
   events: {
@@ -84,32 +86,24 @@ PaletteView = Backbone.View.extend({
 // MODEL
 Palette = Backbone.Model.extend({
   defaults: {
-    // "clear-winter": { "medium-grey": "#d3d3d3" },
-    // "cool-winter": { "icy-grey": "#d1d9d2" },
-    // "deep-winter": { "black": "#000000" },
-    // "clear-spring": { "navy": "#000080" },
-    // "warm-spring": { "camel": "#c19a6b" },
-    // "light-spring": { "camel": "#c19a6b" },
-    // "light-summer": { "light-grey": "#d3d3d3" },
-    // "cool-summer": { "light-grey": "#d3d3d3" },
-    // "soft-summer": { "black": "#000" },
-    // "soft-autumn": { "mahogany": "#C04000" },
-    // "warm-autumn": { "camel": "#c19a6b" },
-    // "deep-autumn": { "pewter": "#8e9294" }
+    skinColor: undefined,
+    hairColor: undefined,
+    eyeColor: undefined
   },
   initialize: function() {
   },
   suggestions: function() {
-    if (this.get("eyeColor") && this.get("skinColor") && this.get("hairColor")) {
+    if (this.get("skinColor") && this.get("hairColor") && this.get("eyeColor")) {
       return "deep-winter";
     } 
   }
 });
 
-var palette = new Palette({ skinColor: undefined, hairColor: undefined, eyeColor: undefined });
+var palette = new Palette();
 
 skinView = new SkinView({ el: $('#skin-container'), palette: palette });
 hairView = new HairView({ el: $('#hair-container'), palette: palette });
 eyesView = new EyesView({ el: $('#eyes-container'), palette: palette });
 
 paletteView = new PaletteView({ el: $('#palette-container'), palette: palette });
+
