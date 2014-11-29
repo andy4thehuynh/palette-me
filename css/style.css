@@ -4,9 +4,11 @@
 
 .details {
   background: white;
+  display: none;
 }
 
 .details.active {
-  color: white;
+  display: block;
   background: red;
+  color: white;
 }

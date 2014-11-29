@@ -1,4 +1,4 @@
- // VIEW
+//  Skin
 SkinView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -19,6 +19,7 @@ SkinView = Backbone.View.extend({
 });
 
 
+//  Hair
 HairView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -39,6 +40,7 @@ HairView = Backbone.View.extend({
 });
 
 
+//  Eyes
 EyesView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -82,22 +84,6 @@ PaletteView = Backbone.View.extend({
 });
 
 
-
-// MODEL
-Palette = Backbone.Model.extend({
-  defaults: {
-    skinColor: undefined,
-    hairColor: undefined,
-    eyeColor: undefined
-  },
-  initialize: function() {
-  },
-  suggestions: function() {
-    if (this.get("skinColor") && this.get("hairColor") && this.get("eyeColor")) {
-      return "deep-winter";
-    } 
-  }
-});
 
 var palette = new Palette();
 
