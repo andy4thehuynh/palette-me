@@ -1,14 +1,1 @@
-.container-fluid {
-  max-width: 768px;
-}
-
-.details {
-  background: white;
-  display: none;
-}
-
-.details.active {
-  display: block;
-  background: red;
-  color: white;
-}
+.container-fluid{max-width:768px}.details{background:white;display:none}.details.active{display:block;background:red;color:white}

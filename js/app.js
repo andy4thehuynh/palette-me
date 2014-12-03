@@ -7,7 +7,7 @@ SkinView = Backbone.View.extend({
   template: _.template($('#skin-template').html()),
   render: function() {
     var html = this.template;
-    this.$el.html( html );
+    this.$el.html(html);
   },
   events: {
     "change input[type=radio]": "getSkinColor"
@@ -28,7 +28,7 @@ HairView = Backbone.View.extend({
   template: _.template($('#hair-template').html()),
   render: function() {
     var html = this.template;
-    this.$el.html( html );
+    this.$el.html(html);
   },
   events: {
     "change input[type=radio]": "getHairColor"
@@ -49,13 +49,12 @@ EyesView = Backbone.View.extend({
   template: _.template($('#eyes-template').html()),
   render: function() {
     var html = this.template;
-    this.$el.html( html );
+    this.$el.html(html);
   },
   events: {
     "change input[type=radio]": "getEyesColor"
   },
   getEyesColor: function(e) {
-    console.log(this.palette);
     var selectedEyesColor = $('input[name=eyes-type]:checked').val();
     this.palette.set("eyeColor", selectedEyesColor);
   }
