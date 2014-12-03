@@ -1,0 +1,17 @@
+// Variables
+$main-500: #3F51B5;
+
+.container-fluid {
+  max-width: 768px;
+}
+
+.details {
+  background: white;
+  display: none;
+}
+
+.details.active {
+  display: block;
+  background: red;
+  color: white;
+}
