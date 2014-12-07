@@ -1,17 +1,57 @@
 // Variables
-$main-500: #3F51B5;
+$primary-hue:   teal;        /* #009688 */
+$secondary-hue: #e0f2f1;     /* lighten-5 */
+$tertiary-hue:  #004d40;     /* darken-4 */
 
-.container-fluid {
-  max-width: 768px;
+$accent-hue:    #a7ffeb;     /* accent-1 */
+
+$text-on-white: rgba(0,0,0,.87);
+$secondary-text: rgba(0,0,0,.54);
+$text-hints: rgba(0,0,0,.26);
+
+$divider-hue: rgba(0,0,0,.12);
+
+
+html {
+  // background-color: $primary-hue;
+  background-color: $secondary-hue;
+  // background-color: $tertiary-hue;
+  // background-color: $accent-hue;
 }
 
-.details {
-  background: white;
-  display: none;
+
+label {
+  color: #fff;
+  font-weight: 300;
 }
 
-.details.active {
-  display: block;
-  background: red;
-  color: white;
+.card .card-content span.card-title {
+  line-height: 1.4;
+}
+
+.card .card-action {
+  border-top: 1px solid $divider-hue;
+  text-align: right;
+}
+
+.card .card-action a {
+  color: $text-on-white;
+}
+
+.btn {
+  margin-bottom: 0;
+}
+
+[type="radio"]:checked+label:after {
+  background-color: $accent-hue;
+}
+
+[type="radio"]:not(:checked)+label:before {
+  border: 2px solid $text-hints;
+}
+
+@media (max-width: 600px) {
+  .card .card-action a {
+    display: block;
+  }
 }

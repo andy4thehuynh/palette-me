@@ -1,4 +1,4 @@
-//  Skin
+//  Skin View
 SkinView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -19,7 +19,7 @@ SkinView = Backbone.View.extend({
 });
 
 
-//  Hair
+//  Hair View
 HairView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -40,7 +40,7 @@ HairView = Backbone.View.extend({
 });
 
 
-//  Eyes
+//  Eyes View
 EyesView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -61,7 +61,7 @@ EyesView = Backbone.View.extend({
 });
 
 
-
+//  Calculated Palette based on skin, hair, eyes
 PaletteView = Backbone.View.extend({
   initialize: function(config) {
     this.palette = config.palette;
@@ -84,6 +84,7 @@ PaletteView = Backbone.View.extend({
 
 
 
+//  Instantiate views and Palette model:
 var palette = new Palette();
 
 skinView = new SkinView({ el: $('#skin-container'), palette: palette });
@@ -91,4 +92,3 @@ hairView = new HairView({ el: $('#hair-container'), palette: palette });
 eyesView = new EyesView({ el: $('#eyes-container'), palette: palette });
 
 paletteView = new PaletteView({ el: $('#palette-container'), palette: palette });
-

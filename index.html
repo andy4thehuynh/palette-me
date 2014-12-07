@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SHE Palette</title>
+  <title>SHEPalette</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/materialize.min.css" />
+  <link rel="stylesheet" href="css/materialize.css" />
 </head>
 <body>
   <div class="container">
-    <div id="skin-container"></div>
-    <div id="hair-container"></div>
-    <div id="eyes-container"></div>
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card teal">
+          <div class="card-content">
+            <span class="card-title">Select your Skin color:</span>
+            <div id="skin-container"></div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="waves-effect waves-light btn teal accent-2">Next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card teal">
+          <div class="card-content">
+            <span class="card-title">Select your Hair color:</span>
+            <div id="hair-container"></div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="waves-effect waves-light btn teal accent-2">Next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card teal">
+          <div class="card-content">
+            <span class="card-title">Select your Eye color:</span>
+            <div id="eyes-container"></div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="waves-effect waves-light btn teal accent-2">Next</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -18,8 +56,6 @@
   </div>
 
   <script type="text/template" id="skin-template">
-    <label>Select your Skin color:</label>
-
     <p>
       <input type="radio" name="skin-type" value="porcelain" id="porcelain" />
       <label for="porcelain">Porcelain</label>
@@ -55,8 +91,6 @@
   </script>
 
   <script type="text/template" id="hair-template">
-    <label>Select your Hair color:</label>
-
     <p>
       <input type="radio" name="hair-type" value="ash-blonde" id="ash-blonde" />
       <label for="ash-blonde">Ash Blonde</label>
@@ -104,8 +138,6 @@
   </script>
 
   <script type="text/template" id="eyes-template">
-    <label>Select your Eye color: </label>
-
     <p>
       <input type="radio" name="eyes-type" value="rich-hazel" id="rich-hazel" />
       <label for="rich-hazel">Rich Hazel or Dark Brown</label>
