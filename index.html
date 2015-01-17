@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
+    <div id="skin-card" class="row first-card">
       <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card teal">
           <div class="card-content">
@@ -16,13 +16,13 @@
             <div id="skin-container"></div>
           </div>
           <div class="card-action">
-            <a href="#" class="waves-effect waves-light btn teal accent-2">Next</a>
+            <a href="#" id="skin-next" class="waves-effect waves-light btn teal accent-2">Next</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div id="hair-card" class="row hidden">
       <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card teal">
           <div class="card-content">
@@ -30,13 +30,13 @@
             <div id="hair-container"></div>
           </div>
           <div class="card-action">
-            <a href="#" class="waves-effect waves-light btn teal accent-2">Next</a>
+            <a href="#" id="hair-next" class="waves-effect waves-light btn teal accent-2">Next</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div id="eye-card" class="row hidden">
       <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card teal">
           <div class="card-content">
@@ -44,13 +44,13 @@
             <div id="eyes-container"></div>
           </div>
           <div class="card-action">
-            <a href="#" class="waves-effect waves-light btn teal accent-2">Next</a>
+            <a href="#" id="eyes-next" class="waves-effect waves-light btn teal accent-2">Next</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      <div id="palette-container"></div>
+      <div id="palette-container" class="row hidden"></div>
     </div>
   </div>
 
@@ -163,40 +163,40 @@
     <h1><%= skinColor %></h1>
     <h1><%= hairColor %></h1>
     <h1><%= eyeColor %></h1>
-    <div id="clear-winter-details" class="details">
+    <div id="clear-winter-details" class="details hidden">
       Clear Winter
     </div>
-    <div id="cool-winter-details" class="details">
+    <div id="cool-winter-details" class="details hidden">
       Cool Winter
     </div>
-    <div id="deep-winter-details" class="details">
+    <div id="deep-winter-details" class="details hidden">
       DEEP WINTER
     </div>
-    <div id="clear-spring-details" class="details">
+    <div id="clear-spring-details" class="details hidden">
       Clear Spring
     </div>
-    <div id="warm-spring-details" class="details">
+    <div id="warm-spring-details" class="details hidden">
       Warm Spring
     </div>
-    <div id="light-spring-details" class="details">
+    <div id="light-spring-details" class="details hidden">
       Light Spring
     </div>
-    <div id="light-summer-details" class="details">
+    <div id="light-summer-details" class="details hidden">
       Light Summer
     </div>
-    <div id="cool-summer-details" class="details">
+    <div id="cool-summer-details" class="details hidden">
       Cool Summer
     </div>
-    <div id="soft-summer-details" class="details">
+    <div id="soft-summer-details" class="details hidden">
       Soft Summer
     </div>
-    <div id="soft-autumn-details" class="details">
+    <div id="soft-autumn-details" class="details hidden">
       Soft Autumn
     </div>
-    <div id="warm-autumn-details" class="details">
+    <div id="warm-autumn-details" class="details hidden">
       Warm Autumn
     </div>
-    <div id="deep-autumn-details" class="details">
+    <div id="deep-autumn-details" class="details hidden">
       Deep Autumn
     </div>
   </script>

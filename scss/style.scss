@@ -19,6 +19,9 @@ html {
   // background-color: $accent-hue;
 }
 
+.first-card {
+  display: block;
+}
 
 label {
   color: #fff;
@@ -48,6 +51,14 @@ label {
 
 [type="radio"]:not(:checked)+label:before {
   border: 2px solid $text-hints;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 @media (max-width: 600px) {

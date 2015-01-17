@@ -73,7 +73,8 @@ PaletteView = Backbone.View.extend({
   suggestedPalettes: function() {
     if (this.palette.suggestions()) {
       $('.details').removeClass('active');
-      $('#' + this.palette.suggestions() + "-details").addClass('active');
+      console.log("hits palette suggestions");
+      $('#' + this.palette.suggestions() + "-details").addClass('show');
     }
   },
   render: function() {
@@ -82,6 +83,25 @@ PaletteView = Backbone.View.extend({
   },
 });
 
+
+// When user clicks next
+$('#skin-next').on('click', function() {
+  $('#skin-card').addClass("hidden");
+  $('#skin-card').removeClass("first-card");
+  $('#hair-card').addClass("show");
+});
+
+$('#hair-next').on('click', function() {
+  $('#hair-card').addClass("hidden");
+  $('#hair-card').removeClass("show");
+  $('#eye-card').addClass("show");
+});
+
+$('#eyes-next').on('click', function() {
+  $('#eye-card').addClass("hidden");
+  $('#eye-card').removeClass("show");
+  $('#palette-container').addClass("show");
+});
 
 
 //  Instantiate views and Palette model:
