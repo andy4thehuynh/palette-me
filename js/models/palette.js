@@ -7,27 +7,21 @@ Palette = Backbone.Model.extend({
   initialize: function() {
   },
   suggestions: function() {
+    console.log("hits suggestions");
     if (this.get("skinColor") && this.get("hairColor") && this.get("eyeColor")) {
       var selectedSkin = this.get("skinColor"),
           selectedHair = this.get("hairColor"),
           selectedEyes = this.get("eyeColor");
 
+          console.log(selectedSkin);
+          console.log(selectedHair);
+          console.log(selectedEyes);
+
+
       var availablePalettes = ['clear-winter', 'cool-winter', 'deep-winter',
                       'clear-spring', 'warm-spring', 'light-spring',
                       'light-summer', 'cool-summer', 'soft-summer',
                       'soft-autumn', 'warm-autumn', 'deep-autumn'];
-
-      var approvedPalettes = [];
-
-      function matches() {
-      }
-
-      //  Logic here
-      for (var skin in skinMatches) {
-        if (skin == selectedSkin) {
-          approvedPalettes.concat(skinMatches[skin]);
-        }
-      }
 
       var skinMatches = {
         'porcelain':     ['clear-spring', 'deep-autumn', 'warm-spring', 'light-summer', 'light-spring'],
@@ -62,9 +56,26 @@ Palette = Backbone.Model.extend({
         'topaz':         ['warm-autumn', 'warm-spring'],
         'soft-hazel':    ['soft-summer', 'cool-winter', 'soft-autumn']
       };
-      approvedPalettes.push('clear-winter');
-      console.log(approvedPalettes);
-      return approvedPalettes;
+
+      //  Logic here
+      var result = [];
+
+      function flattener(arr, selection) {
+        for (var i in arr) {
+          if (i == selection) {
+            for (var j=0; j<arr[i].length; j++) {
+              result.push(arr[i][j]);
+            }
+          }
+        }
+      }
+
+      flattener(skinMatches, selectedSkin);
+      flattener(hairMatches, selectedHair);
+      flattener(eyesMatches, selectedEyes);
+
+      console.log(result);
+
     }
   }
 });

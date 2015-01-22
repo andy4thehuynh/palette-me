@@ -73,7 +73,6 @@ PaletteView = Backbone.View.extend({
   suggestedPalettes: function() {
     if (this.palette.suggestions()) {
       $('.details').removeClass('active');
-      console.log("hits palette suggestions");
       $('#' + this.palette.suggestions() + "-details").addClass('show');
     }
   },
@@ -87,7 +86,6 @@ PaletteView = Backbone.View.extend({
 // When user clicks next
 $('#skin-next').on('click', function() {
   $('#skin-card').addClass("hidden");
-  $('#skin-card').removeClass("first-card");
   $('#hair-card').addClass("show");
 });
 
