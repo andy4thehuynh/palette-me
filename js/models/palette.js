@@ -7,7 +7,6 @@ Palette = Backbone.Model.extend({
   initialize: function() {
   },
   suggestions: function() {
-    console.log("hits suggestions");
     if (this.get("skinColor") && this.get("hairColor") && this.get("eyeColor")) {
       var selectedSkin = this.get("skinColor"),
           selectedHair = this.get("hairColor"),
@@ -75,7 +74,7 @@ Palette = Backbone.Model.extend({
       flattener(eyesMatches, selectedEyes);
 
       console.log(result);
-
+      return 'clear-winter';
     }
   }
 });
