@@ -73,8 +73,42 @@ Palette = Backbone.Model.extend({
       flattener(hairMatches, selectedHair);
       flattener(eyesMatches, selectedEyes);
 
-      console.log(result);
-      return 'clear-winter';
+      function count(ary, classifier) {
+        return ary.reduce(function(counter, item) {
+          var p = (classifier || String)(item);
+          counter[p] = counter.hasOwnProperty(p) ? counter[p] + 1 : 1;
+          return counter;
+        }, {})
+      }
+
+      function findPalette(obj) {
+        var max = {
+          val: Number.NEGATIVE_INFINITY,
+          keys: []
+        };
+
+        for (var prop in obj) {
+          if (obj.hasOwnProperty(prop)) {
+            var n = obj[prop];
+            if (n >= max.val) {
+              if (n > max.val) {
+                max.keys = [];
+              }
+              max.val = n;
+              max.keys.push(prop);
+            }
+          }
+        }
+        return max;
+      }
+
+      var total = count(result);
+      console.log(total);
+      p = findPalette(total);
+      console.log(findPalette(total));
+
+      return findPalette(total);
+      // return 'clear-winter';
     }
   }
 });

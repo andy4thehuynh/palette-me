@@ -72,8 +72,11 @@ PaletteView = Backbone.View.extend({
   template: _.template($('#palette-template').html()),
   suggestedPalettes: function() {
     if (this.palette.suggestions()) {
+      var suggestions = this.palette.suggestions();
       $('.details').removeClass('active');
-      $('#' + this.palette.suggestions() + "-details").addClass('show');
+      $.each(suggestions.keys, function(index, prop) {
+        $('#' + prop + "-details").addClass('show');
+      });
     }
   },
   render: function() {
