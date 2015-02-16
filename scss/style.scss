@@ -12,8 +12,11 @@ $text-hints: rgba(0,0,0,.26);
 $divider-hue: rgba(0,0,0,.12);
 
 
-
-// Palette Colors:
+////////////////////////////////////////
+//
+// Clear Winter
+//
+////////////////////////////////////////
 .medium-grey { background-color: #76878e; }
 .charcoal { background-color: #536569; }
 .black { background-color: #060807; }
@@ -28,10 +31,10 @@ $divider-hue: rgba(0,0,0,.12);
 .hot-pink { background-color: #ff0aff; }
 .clear-red { background-color: #fd013e; }
 .true-red { background-color: #fd0002; }
+
 .fuchsia { background-color: #e008ff; }
 .raspberry { background-color: #e30373; }
 .aubergine { background-color: #651121; }
-
 .icy-yellow { background-color: #f8ffaf; }
 .bright-golden-yellow { background-color: #f4ff1c; }
 .hot-turquoise { background-color: #6fffe4; }
@@ -45,11 +48,196 @@ $divider-hue: rgba(0,0,0,.12);
 .navy { background-color: #0021c8; }
 
 
+////////////////////////////////////////
+//
+// Cool Winter
+//
+////////////////////////////////////////
+// .icy-grey
+.light-grey { background-color: #c2d0d3; }
+// .medium-grey
+// .black
+// .charcoal
+// .taupe
+// .pure-white
+// .pewter
+.rose-pink { background-color: #ed5fff; }
+// .hot-pink
+// .fuchsia
+.magenta { background-color: #bd00f0; }
+.blue-red { background-color: #b40001; }
+.deep-rose { background-color: #f1004d; }
+
+// .raspberry
+.burgundy { background-color: #8d051b; }
+// .icy-blue
+// .icy-pink
+.lemon-yellow { background-color: #f7ff41; }
+// .emerald-turqouise
+// .pine
+.chinese-blue { background-color: #4cdae4; }
+.medium-blue { background-color: #6fa0ff; }
+// .royal-blue
+.bright-periwinkle { background-color: #4f5cff; }
+// .navy
+// .purple
+.plum { background-color: #1f02b6; }
+
+
+////////////////////////////////////////
+//
+// Deep Winter
+//
+////////////////////////////////////////
+// .black
+// .charcoal
+// .black-brown
+// .pewter
+.brown-burgundy { background-color: #35161e; }
+// .pure-white
+.stone { background-color: #e7eede; }
+// .icy-grey
+// .medium-grey
+// .hot-pink
+// .true-red
+.tomato-red { background-color: #f21f01; }
+// .burgundy
+.rust { background-color: #b11545; }
+
+// .blue-red
+.mint { background-color: #a4ffd4; }
+// .lemon-yellow
+.turquoise { background-color: #52ffc0; }
+.emerald-green { background-color: #3fff6b; }
+.olive { background-color: #2d8723; }
+// .pine
+// .emerald-turquoise
+// .clear-teal
+// .bright-periwinkle
+// .chinese-blue
+// .purple
+// .true-blue
+// .navy
+
+
+////////////////////////////////////////
+//
+// Clear Spring
+//
+////////////////////////////////////////
+// .navy
+// .light-grey
+// .charcoal
+// .black
+// .stone
+// .pewter
+// .black-brown
+// .mint
+.bright-golden-yellow { background-color: #f6ff1c; }
+.light-clear-gold { background-color: #f6da6d; }
+.pastel-yellow-green { background-color: #c2ff48; }
+.true-green { background-color: #55ff3a; }
+.forest-green { background-color: #26cb03; }
+// .olive
+
+// .clear-teal
+// .hot-turquoise
+// .true-blue
+// .bright-periwinkle
+.periwinkle { background-color: #9ea5ff; }
+// .violet
+// .purple
+.warm-pastel-pink { background-color: #eea3ff; }
+.coral  { background-color: #fc9ef6; }
+.coral-pink { background-color: #ff5cf3; }
+.warm-pink { background-color: #fe32e1; }
+// .clear-red
+// .hot-pink
+// .deep-rose
+
+
+////////////////////////////////////////
+//
+// Warm Spring
+//
+////////////////////////////////////////
+.camel { background-color: #d89b02; }
+.bronze { background-color: #8c8439; }
+.golden-brown { background-color: #9c4c2b; }
+.dark-brown { background-color: #6d4f44; }
+// .stone
+.grey-green { background-color: #88b397; }
+.cream { background-color: #f9fde6; }
+.peach { background-color: #fda1a4; }
+.light-orange { background-color: #fdb06c; }
+.clear-salmon { background-color: #ff7686; }
+// .coral
+// .tomato-red
+.terracotta { background-color: #ea6159; }
+.marigold { background-color: #e8b800; }
+
+.pumpkin { background-color: #e17701; }
+// .rust
+.buff { background-color: #ecf6d1; }
+// .bright-golden-yellow
+.bright-yellow-green { background-color: #5bff06; }
+// .pastel-yellow-green
+.light-true-green { background-color: #7bff6e; }
+.moss { background-color: #6bc969; }
+.light-aqua { background-color: #9afeff; }
+.clear-aqua { background-color: #54dafd; }
+// .emerald-turquoise
+.jade { background-color: #48d378; }
+.teal { background-color: #4cffbe; }
+.deep-periwinkle { background-color: #666cfe; }
+
+
+////////////////////////////////////////
+//
+// Light Spring
+//
+////////////////////////////////////////
+// .camel
+.khaki { background-color: #7b8701; }
+// .pewter
+// .light-grey
+.blue-charcoal { background-color: #0b195a; }
+// .taupe
+// .stone
+// .warm-pastel-pink
+.powder-pink { background-color: #eb98ff; }
+// .clear-salmon
+// .coral
+// .rose-pink
+// .warm-pink
+.watermeleon { background-color: #f01373; }
+
+// .clear-red
+// .buff
+// .pastel-yellow-green
+// .bright-golden-yellow
+.light-moss { background-color: #8bde96; }
+// .bright-yellow-green
+.emerald-turquoise { background-color: #3fff6b; }
+// .light-aqua
+// .clear-aqua
+.powder-blue { background-color: #c2dcff; }
+// .periwinkle
+// .violet
+// .medium-blue
+.light-navy { background-color: #1c40ee; }
 
 
 
 
 
+
+
+////////////////////////////////////////
+//
+// Style & Structure
+//
+////////////////////////////////////////
 html {
   // background-color: $primary-hue;
   background-color: $secondary-hue;
